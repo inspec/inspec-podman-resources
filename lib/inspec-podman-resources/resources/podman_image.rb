@@ -1,12 +1,11 @@
 require "inspec/resources/command"
 require "inspec-podman-resources/resources/podman_object"
-require "inspec/utils/podman"
+require "inspec-podman-resources/resources/utils/podman"
 
 module Inspec::Resources
   class PodmanImage < Inspec.resource(1)
     include PodmanObject
-    include Inspec::Utils::Podman
-
+    include Utils::Podman
     name "podman_image"
     supports platform: "unix"
 
