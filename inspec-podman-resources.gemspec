@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
   spec.name          = "inspec-podman-resources"
 
   # It is polite to namespace your plugin under InspecPlugins::YourPluginInCamelCase
-  spec.version       = "0.1.8"
+  spec.version       = InspecPlugins::PodmanResources::VERSION
   spec.authors       = ["InSpec Core Maintainers"]
   spec.email         = ["inspec@progress.com"]
   spec.summary       = "podman InSpec Resources in a Gem"

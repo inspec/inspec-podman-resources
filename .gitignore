@@ -1,2 +1,4 @@
 *.gem
 *.swp
+.byebug_history
+.ruby-version

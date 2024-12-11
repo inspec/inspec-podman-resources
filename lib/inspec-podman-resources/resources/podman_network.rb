@@ -36,7 +36,6 @@ class PodmanNetwork < Inspec.resource(1)
 
   attr_reader :param, :network_info
   def initialize(param)
-    require 'byebug'; byebug
     skip_resource "The `podman_network` resource is not yet available on your OS." unless inspec.os.unix?
 
     @param = param

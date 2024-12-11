@@ -68,6 +68,7 @@ class PodmanContainer < Inspec.resource(1)
     name = @opts[:name] || @opts[:id]
     "Podman Container #{name}"
   end
+
   def exist?
     !object_info.empty?
   end
