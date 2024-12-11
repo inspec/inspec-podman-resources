@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
   spec.name          = "inspec-podman-resources"
 
   # It is polite to namespace your plugin under InspecPlugins::YourPluginInCamelCase
-  spec.version       = InspecPlugins::PodmanResources::VERSION
+  spec.version       = "0.1.8"
   spec.authors       = ["InSpec Core Maintainers"]
   spec.email         = ["inspec@progress.com"]
   spec.summary       = "podman InSpec Resources in a Gem"
@@ -39,4 +39,9 @@ Gem::Specification.new do |spec|
 
   # This plugin uses InSpec 7 Resource Pack Plugins
   spec.add_dependency "inspec-core", ">= 7.0"
+  spec.add_dependency "tomlrb", "1.3.0"
+  spec.add_dependency "concurrent-ruby", "1.3.4"
+  spec.add_dependency "net-ssh", "7.3.0"
+  spec.add_dependency "unicode-display_width", "2.6.0"
+  spec.add_dependency "parallel", "1.26.3"
 end
