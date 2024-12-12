@@ -1,6 +1,4 @@
-# If we can load the InSpec globals definition file...
-require "inspec/globals"
-require "helper"
+require_relative "../helper"
 require "inspec-podman-resources/resources/podman_image"
 
 describe PodmanImage do

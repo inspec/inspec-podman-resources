@@ -53,24 +53,22 @@ class PodmanContainer < Inspec.resource(1)
   end
 
   def command
-    object_info[0]["command"] if object_info.length == 1
+    return unless object_info.entries.length == 1
+
+    object_info.commands[0]
   end
 
   def image
-    object_info[0]["image"] if object_info.length == 1
+    object_info.images[0] if object_info.entries.length == 1
   end
 
   def resource_id
-    object_info[0]["id"] || @opts[:id] || @opts[:name] || ""
+    object_info.ids[0] || @opts[:id] || @opts[:name] || ""
   end
 
   def to_s
     name = @opts[:name] || @opts[:id]
     "Podman Container #{name}"
-  end
-
-  def exist?
-    !object_info.empty?
   end
 
   private
@@ -79,8 +77,6 @@ class PodmanContainer < Inspec.resource(1)
     return @info if defined?(@info)
 
     opts = @opts
-    @info = inspec.podman.containers.where do |c|
-      c["name"] == opts[:name] || (!c["id"].nil? && !opts[:id].nil? && (c["id"] == opts[:id] || c["id"].start_with?(opts[:id])))
-    end
+    @info = inspec.podman.containers.where { names == opts[:name] || (!id.nil? && !opts[:id].nil? && (id == opts[:id] || id.start_with?(opts[:id]))) }
   end
 end

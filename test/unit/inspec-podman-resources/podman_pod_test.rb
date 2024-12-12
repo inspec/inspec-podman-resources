@@ -1,4 +1,4 @@
-require "helper"
+require_relative "../helper"
 require "inspec-podman-resources/resources/podman_pod"
 
 describe PodmanPod do

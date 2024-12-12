@@ -1,4 +1,4 @@
-require "helper"
+require_relative "../helper"
 require "inspec-podman-resources/resources/podman"
 
 describe Podman do
@@ -9,7 +9,7 @@ describe Podman do
 
   before do
     mock_file.stubs(:file?).returns(true) # Stub the file? method to return true
-    inspec_mock.stubs(:podman).returns(mock("podman")) # Stub the inspec.mongodb method to return the mock podman object
+    inspec_mock.stubs(:podman).returns(mock("podman"))
     #containers
     inspec_mock.stubs(:command).with("podman ps -a --no-trunc --size --format '{\"ID\": {{json .ID}}, \"Image\": {{json .Image}}, \"ImageID\": {{json .ImageID}}, \"Command\": {{json .Command}}, \"CreatedAt\": {{json .CreatedAt}}, \"RunningFor\": {{json .RunningFor}}, \"Status\": {{json .Status}}, \"Pod\": {{json .Pod}}, \"Ports\": {{json .Ports}}, \"Size\": {{json .Size}}, \"Names\": {{json .Names}}, \"Networks\": {{json .Networks}}, \"Labels\": {{json .Labels}}, \"Mounts\": {{json .Mounts}}}'").returns(mock("podmand_ps_a").tap do |cmd|
     cmd.stubs(:exit_status).returns(0)

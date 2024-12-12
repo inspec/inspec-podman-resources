@@ -1,6 +1,3 @@
-#
-# Copyright 2017, Christoph Hartmann
-#
 
 module PodmanObject
   def exist?
