@@ -15,7 +15,7 @@ describe PodmanContainer do
     os_mock.stubs(:unix?).returns(true) # Ensure os.unix? returns true
     inspec_mock.stubs(:os).returns(os_mock)
     inspec_mock.stubs(:podman).returns(podman_mock)
-      inspec_mock.stubs(:command).with("podman ps -a --no-trunc --size --format '{\"ID\": {{json .ID}}, \"Image\": {{json .Image}}, \"ImageID\": {{json .ImageID}}, \"Command\": {{json .Command}}, \"CreatedAt\": {{json .CreatedAt}}, \"RunningFor\": {{json .RunningFor}}, \"Status\": {{json .Status}}, \"Pod\": {{json .Pod}}, \"Ports\": {{json .Ports}}, \"Size\": {{json .Size}}, \"Names\": {{json .Names}}, \"Networks\": {{json .Networks}}, \"Labels\": {{json .Labels}}, \"Mounts\": {{json .Mounts}}}'").returns(mock("podmand_ps_a").tap do |cmd|
+    inspec_mock.stubs(:command).with("podman ps -a --no-trunc --size --format '{\"ID\": {{json .ID}}, \"Image\": {{json .Image}}, \"ImageID\": {{json .ImageID}}, \"Command\": {{json .Command}}, \"CreatedAt\": {{json .CreatedAt}}, \"RunningFor\": {{json .RunningFor}}, \"Status\": {{json .Status}}, \"Pod\": {{json .Pod}}, \"Ports\": {{json .Ports}}, \"Size\": {{json .Size}}, \"Names\": {{json .Names}}, \"Networks\": {{json .Networks}}, \"Labels\": {{json .Labels}}, \"Mounts\": {{json .Mounts}}}'").returns(mock("podmand_ps_a").tap do |cmd|
       cmd.stubs(:exit_status).returns(0)
       cmd.stubs(:stdout).returns(File.read("test/fixtures/podman-ps-a"))
     end)
@@ -36,7 +36,7 @@ describe PodmanContainer do
   end
 
   it "checks container parsing" do
-    resource = PodmanContainer.new({"name": "sweet_mendeleev","command": "/bin/bash"})
+    resource = PodmanContainer.new({ "name": "sweet_mendeleev", "command": "/bin/bash" })
     _(resource.exist?).must_equal true
     _(resource.command).must_equal "/bin/bash"
     _(resource.status).must_equal "Up 13 hours ago"

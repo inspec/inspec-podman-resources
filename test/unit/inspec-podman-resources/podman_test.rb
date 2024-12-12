@@ -10,23 +10,23 @@ describe Podman do
   before do
     mock_file.stubs(:file?).returns(true) # Stub the file? method to return true
     inspec_mock.stubs(:podman).returns(mock("podman"))
-    #containers
+    # containers
     inspec_mock.stubs(:command).with("podman ps -a --no-trunc --size --format '{\"ID\": {{json .ID}}, \"Image\": {{json .Image}}, \"ImageID\": {{json .ImageID}}, \"Command\": {{json .Command}}, \"CreatedAt\": {{json .CreatedAt}}, \"RunningFor\": {{json .RunningFor}}, \"Status\": {{json .Status}}, \"Pod\": {{json .Pod}}, \"Ports\": {{json .Ports}}, \"Size\": {{json .Size}}, \"Names\": {{json .Names}}, \"Networks\": {{json .Networks}}, \"Labels\": {{json .Labels}}, \"Mounts\": {{json .Mounts}}}'").returns(mock("podmand_ps_a").tap do |cmd|
-    cmd.stubs(:exit_status).returns(0)
-    cmd.stubs(:stdout).returns(File.read("test/fixtures/podman-ps-a"))
+      cmd.stubs(:exit_status).returns(0)
+      cmd.stubs(:stdout).returns(File.read("test/fixtures/podman-ps-a"))
     end)
 
-    #images
+    # images
     inspec_mock.stubs(:command).with("podman images -a --no-trunc --format '{\"ID\": {{json .ID}}, \"Repository\": {{json .Repository}}, \"Tag\": {{json .Tag}}, \"Size\": {{json .Size}}, \"Digest\": {{json .Digest}}, \"CreatedAt\": {{json .CreatedAt}}, \"CreatedSince\": {{json .CreatedSince}}, \"History\": {{json .History}}}'").returns(mock("podmand_images_a").tap do |cmd|
       cmd.stubs(:exit_status).returns(0)
       cmd.stubs(:stdout).returns(File.read("test/fixtures/podman-images-a"))
     end)
-    #networks
+    # networks
     inspec_mock.stubs(:command).with("podman network ls --no-trunc --format '{\"ID\": {{json .ID}}, \"Name\": {{json .Name}}, \"Driver\": {{json .Driver}}, \"Labels\": {{json .Labels}}, \"Options\": {{json .Options}}, \"IPAMOptions\": {{json .IPAMOptions}}, \"Created\": {{json .Created}}, \"Internal\": {{json .Internal}}, \"IPv6Enabled\": {{json .IPv6Enabled}}, \"DNSEnabled\": {{json .DNSEnabled}}, \"NetworkInterface\": {{json .NetworkInterface}}, \"Subnets\": {{json .Subnets}}}'").returns(mock("podman_network_ls").tap do |cmd|
       cmd.stubs(:exit_status).returns(0)
       cmd.stubs(:stdout).returns(File.read("test/fixtures/podman-network-ls"))
     end)
-    #pod
+    # pod
     inspec_mock.stubs(:command).with("podman pod ps --no-trunc --format json").returns(mock("podmand_pod_ps").tap do |cmd|
       cmd.stubs(:exit_status).returns(0)
       cmd.stubs(:stdout).returns(File.read("test/fixtures/podman-pod-ps"))
@@ -45,7 +45,7 @@ describe Podman do
       cmd.stubs(:stderr).returns("")
     end)
 
-    #volume
+    # volume
     inspec_mock.stubs(:command).with("podman volume ls --format json").returns(mock("podmand_volume_ls").tap do |cmd|
       cmd.stubs(:exit_status).returns(0)
       cmd.stubs(:stdout).returns(File.read("test/fixtures/podman-volume-ls"))
@@ -57,7 +57,6 @@ describe Podman do
       cmd.stubs(:stdout).returns(File.read("test/fixtures/podman-inspec"))
       cmd.stubs(:stderr).returns("")
     end)
-
 
     Podman.any_instance.stubs(:inspec).returns(inspec_mock) # Stub the inspec methods to return the inspec_mock
   end

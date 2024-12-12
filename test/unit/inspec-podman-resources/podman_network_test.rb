@@ -58,18 +58,18 @@ describe PodmanNetwork do
 
   it "test podman network properties and matchers for non-existent network" do
     resource = PodmanNetwork.new("not_exist")
-      _(resource.exist?).must_equal false
-      assert_nil resource.name
-      assert_nil resource.driver
-      assert_nil resource.ipv6_enabled
-      assert_nil resource.dns_enabled
-      assert_nil resource.options
-      assert_nil resource.ipam_options
-      assert_nil resource.subnets
-      assert_nil resource.created
-      assert_nil resource.internal
-      assert_nil resource.network_interface
-      assert_nil resource.labels
+    _(resource.exist?).must_equal false
+    assert_nil resource.name
+    assert_nil resource.driver
+    assert_nil resource.ipv6_enabled
+    assert_nil resource.dns_enabled
+    assert_nil resource.options
+    assert_nil resource.ipam_options
+    assert_nil resource.subnets
+    assert_nil resource.created
+    assert_nil resource.internal
+    assert_nil resource.network_interface
+    assert_nil resource.labels
   end
 
 end
