@@ -1,4 +1,7 @@
 ---
+
+product_key: inspec-podman-resources
+
 slack:
   notify_channel:
     - inspec-notify
