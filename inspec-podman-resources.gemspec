@@ -39,6 +39,7 @@ Gem::Specification.new do |spec|
 
   # This plugin uses InSpec 7 Resource Pack Plugins
   spec.add_dependency "inspec-core", ">= 7.0"
+  # TODO: remove these dependencies
   spec.add_dependency "tomlrb", "1.3.0"
   spec.add_dependency "concurrent-ruby", "1.3.4"
   spec.add_dependency "net-ssh", "7.3.0"
