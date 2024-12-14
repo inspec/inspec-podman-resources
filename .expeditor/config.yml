@@ -9,7 +9,7 @@ pipelines:
       description: Executes the verify pipeline for Resource packs
 
 rubygems:
-  - inspec-mongodb-resources:
+  - inspec-podman-resources:
       gemspec_path: .
 
 github:
