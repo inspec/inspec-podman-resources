@@ -8,6 +8,10 @@ pipelines:
       definition: .expeditor/verify.pipeline.yml
       description: Executes the verify pipeline for Resource packs
 
+rubygems:
+  - inspec-podman-resources:
+      gemspec_path: .
+
 github:
   delete_branch_on_merge: true
   minor_bump_labels:
@@ -28,3 +32,9 @@ subscriptions:
         ignore_labels:
           - "Expeditor: Skip All"
           - "Expeditor: Skip Changelog"
+    - built_in:build_gem:
+        only_if: built_in:bump_version
+  - workload: project_promoted:{{agent_id}}:*
+    actions:
+      - built_in:rollover_changelog
+      - built_in:publish_rubygems
