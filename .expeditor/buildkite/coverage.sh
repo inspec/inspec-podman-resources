@@ -13,7 +13,7 @@ unzip -o $VAULT_HOME/vault.zip -d $VAULT_HOME
 
 if [ -n "${CI_ENABLE_COVERAGE:-}" ]; then
   echo "--- fetching Sonar token from vault"
-  export SONAR_TOKEN=$($VAULT_HOME/vault kv get -field token secret/inspec/train)
+  export SONAR_TOKEN=$($VAULT_HOME/vault kv get -field token secret/inspec/inspec-podman-resources)
 fi
 
 echo "--- bundle install"
