@@ -1,9 +1,14 @@
 #!/bin/bash
 
-set -ue
+set -ueo pipefail
 
-export USER="root"
-export LANG=C.UTF-8 LANGUAGE=C.UTF-8
+echo "--- system details"
+uname -a
+ruby -v
+bundle --version
+
+echo "--- system environment"
+env
 
 echo "--- installing vault"
 export VAULT_VERSION=1.13.0
