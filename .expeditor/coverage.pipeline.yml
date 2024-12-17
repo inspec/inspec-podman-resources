@@ -11,6 +11,7 @@ steps:
 
   - label: coverage-ruby-3.1
     command:
+      - chmod +x .expeditor/buildkite/coverage.sh
       - CI_ENABLE_COVERAGE=1 RAKE_TASK=test /workdir/.expeditor/buildkite/coverage.sh
     expeditor:
       secrets: true
