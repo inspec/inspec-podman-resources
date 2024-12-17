@@ -5,6 +5,6 @@ copyright: Progress Software Corporation
 copyright_email: inspec@progress.com
 license: ApacheV2
 summary: podman InSpec Resources in a Gem
-version: 0.1.2
+version: 0.1.3
 supports:
   platform: os
