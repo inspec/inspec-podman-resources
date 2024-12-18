@@ -5,6 +5,6 @@
 # to learn the current version.
 module InspecPlugins
   module PodmanResources
-    VERSION = "0.1.2"
+    VERSION = "0.1.3"
   end
 end
