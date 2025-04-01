@@ -1,14 +1,15 @@
 # Changelog
-<!-- latest_release 0.1.6 -->
-## [0.1.6](https://github.com/inspec/inspec-podman-resources/tree/0.1.6) (2025-03-21)
+<!-- latest_release 7.0.0 -->
+## [7.0.0](https://github.com/inspec/inspec-podman-resources/tree/7.0.0) (2025-04-01)
 
 #### Merged Pull Requests
-- dep: add gemspec dependency in our Gemfile [#10](https://github.com/inspec/inspec-podman-resources/pull/10) ([ahasunos](https://github.com/ahasunos))
+- CHEF-18512: Sync version with InSpec major version [#12](https://github.com/inspec/inspec-podman-resources/pull/12) ([ahasunos](https://github.com/ahasunos))
 <!-- latest_release -->
 <!-- release_rollup -->
 ### Changes since latest stable release
 
 #### Merged Pull Requests
+- CHEF-18512: Sync version with InSpec major version [#12](https://github.com/inspec/inspec-podman-resources/pull/12) ([ahasunos](https://github.com/ahasunos)) <!-- 7.0.0 -->
 - dep: add gemspec dependency in our Gemfile [#10](https://github.com/inspec/inspec-podman-resources/pull/10) ([ahasunos](https://github.com/ahasunos)) <!-- 0.1.6 -->
 - CHEF-17874-Adding podman resource files [#2](https://github.com/inspec/inspec-podman-resources/pull/2) ([balasubramanian-s](https://github.com/balasubramanian-s)) <!-- 0.1.5 -->
 - CHEF-18212-Export test results [#7](https://github.com/inspec/inspec-podman-resources/pull/7) ([balasubramanian-s](https://github.com/balasubramanian-s)) <!-- 0.1.4 -->
