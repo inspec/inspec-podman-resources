@@ -32,6 +32,8 @@ Gem::Specification.new do |spec|
   ).reject { |f| File.directory?(f) }
   spec.require_paths = ["lib"]
 
+  spec.required_ruby_version = ">= 3.1.0"
+
   # If you rely on any other gems, list them here with any constraints.
   # This is how `inspec plugin install` is able to manage your dependencies.
   # For example, perhaps you are writing a thing that talks to AWS, and you
