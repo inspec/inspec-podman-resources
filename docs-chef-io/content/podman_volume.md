@@ -1,23 +1,15 @@
 +++
 title = "podman_volume resource"
 draft = false
-gh_repo = "inspec"
-platform = "unix"
 
-[menu]
-  [menu.inspec]
+
+[menu.podman]
     title = "podman_volume"
     identifier = "inspec/resources/os/podman_volume.md podman_volume resource"
     parent = "inspec/resources/os"
 +++
 
 Use the `podman_volume` Chef InSpec audit resource to test the properties of a volume on Podman.
-
-## Availability
-
-### Install
-
-This resource is distributed with Chef InSpec and is automatically available for use.
 
 ## Syntax
 
@@ -124,7 +116,7 @@ its("needs_chown") { should eq true }
 
 ## Matchers
 
-{{< readfile file="content/inspec/reusable/md/inspec_matchers_link.md" >}}
+{{< readfile file="content/reusable/md/inspec_matchers_link.md" >}}
 
 This resource has the following special matchers.
 
@@ -138,7 +130,7 @@ it { should exist }
 
 ## Examples
 
-### Test if a volume exists on Podman and verifies volume properties
+Test if a volume exists on Podman and verifies volume properties:
 
 ```ruby
 describe podman_volume("my_volume") do

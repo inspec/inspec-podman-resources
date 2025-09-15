@@ -1,23 +1,15 @@
 +++
 title = "podman_image resource"
 draft = false
-gh_repo = "inspec"
-platform = "unix"
 
-[menu]
-  [menu.inspec]
+
+[menu.podman]
     title = "podman_image"
     identifier = "inspec/resources/os/podman_image.md podman_image resource"
     parent = "inspec/resources/os"
 +++
 
 Use the `podman_image` Chef InSpec audit resource to test the properties of a container image on Podman.
-
-## Availability
-
-### Install
-
-This resource is distributed with Chef InSpec and is automatically available for use.
 
 ## Syntax
 
@@ -156,7 +148,7 @@ its("virtual_size") { should eq 1636053 }
 
 ## Matchers
 
-{{< readfile file="content/inspec/reusable/md/inspec_matchers_link.md" >}}
+{{< readfile file="content/reusable/md/inspec_matchers_link.md" >}}
 
 This resource has the following special matchers.
 
@@ -170,7 +162,7 @@ it { should exist }
 
 ## Examples
 
-### Test if an image exists on Podman and verify the various image properties
+Test if an image exists on Podman and verify the various image properties:
 
 ```ruby
 describe podman_image("docker.io/library/busybox") do
