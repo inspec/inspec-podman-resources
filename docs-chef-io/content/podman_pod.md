@@ -5,8 +5,8 @@ draft = false
 
 [menu.podman]
     title = "podman_pod"
-    identifier = "inspec/resources/os/podman_pod.md podman_pod resource"
-    parent = "inspec/resources/os"
+    identifier = "inspec/resources/podman/podman_pod.md podman_pod resource"
+    parent = "inspec/resources/podman"
 +++
 
 Use the `podman_pod` Chef InSpec audit resource to test the properties of a pod on Podman.

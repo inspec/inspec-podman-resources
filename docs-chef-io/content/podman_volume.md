@@ -5,8 +5,8 @@ draft = false
 
 [menu.podman]
     title = "podman_volume"
-    identifier = "inspec/resources/os/podman_volume.md podman_volume resource"
-    parent = "inspec/resources/os"
+    identifier = "inspec/resources/podman/podman_volume.md podman_volume resource"
+    parent = "inspec/resources/podman"
 +++
 
 Use the `podman_volume` Chef InSpec audit resource to test the properties of a volume on Podman.
