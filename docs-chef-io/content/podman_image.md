@@ -5,8 +5,8 @@ draft = false
 
 [menu.podman]
     title = "podman_image"
-    identifier = "inspec/resources/os/podman_image.md podman_image resource"
-    parent = "inspec/resources/os"
+    identifier = "inspec/resources/podman/podman_image.md podman_image resource"
+    parent = "inspec/resources/podman"
 +++
 
 Use the `podman_image` Chef InSpec audit resource to test the properties of a container image on Podman.

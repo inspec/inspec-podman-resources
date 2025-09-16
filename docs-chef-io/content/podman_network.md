@@ -5,8 +5,8 @@ draft = false
 
 [menu.podman]
     title = "podman_network"
-    identifier = "inspec/resources/os/podman_network.md podman_network resource"
-    parent = "inspec/resources/os"
+    identifier = "inspec/resources/podman/podman_network.md podman_network resource"
+    parent = "inspec/resources/podman"
 +++
 
 Use the `podman_network` Chef InSpec audit resource to test the properties of existing Podman networks.
