@@ -1,20 +1,18 @@
 +++
-title = "About Chef InSpec Podman resources"
-platform = "podman"
+title = "About the Chef InSpec Podman resource pack"
 draft = false
-linkTitle = "Podman resources"
+linkTitle = "Podman resource pack"
 summary = "Chef InSpec resources for auditing Podman."
-
 
 [cascade]
   [cascade.params]
-    gh_repo = "inspec-podman-resources"
     platform = "podman"
 
 [menu.podman]
-title = "About resources"
-identifier = "inspec/resources/podman/about"
-parent = "inspec/resources/podman"
+  title = "About Podman resources"
+  identifier = "inspec/resources/podman/about"
+  parent = "inspec/resources/podman"
+  weight = 10
 +++
 
 The InSpec Podman resources allow you to test and validate the state of Podman containers, images, pods, networks, and volumes.
@@ -30,7 +28,7 @@ To add this resource pack to an InSpec profile, add the `inspec-podman-resources
 
 ```yaml
 depends:
- - name: inspec-podman-resources
+  - name: inspec-podman-resources
     gem: inspec-podman-resources
 ```
 
