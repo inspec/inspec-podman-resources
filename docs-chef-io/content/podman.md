@@ -112,7 +112,7 @@ podman.containers.running?.ids.each do |id|
 end
 ```
 
-Return information about containers as returned by [podman ps -a](https://docs.podman.io/en/latest/markdown/podman.1.html).
+Return information about containers as returned by [podman ps -a](https://docs.podman.io/en/latest/markdown/podman.1.html):
 
 ```ruby
 describe podman.containers do
@@ -123,7 +123,7 @@ describe podman.containers do
 end
 ```
 
-Return information about a Podman image as returned by [podman images -a](https://docs.podman.io/en/latest/markdown/podman-images.1.html).
+Return information about a Podman image as returned by [podman images -a](https://docs.podman.io/en/latest/markdown/podman-images.1.html):
 
 ```ruby
 describe podman.images do
@@ -143,7 +143,7 @@ describe podman.pods do
 end
 ```
 
-Return information about a Podman network as returned by [podman network ls](https://docs.podman.io/en/latest/markdown/podman-network-ls.1.html).
+Return information about a Podman network as returned by [podman network ls](https://docs.podman.io/en/latest/markdown/podman-network-ls.1.html):
 
 ```ruby
 describe podman.networks do
@@ -153,7 +153,7 @@ describe podman.networks do
 end
 ```
 
-Return information about a Podman volume as returned by [podman volume ls](https://docs.podman.io/en/latest/markdown/podman-volume-ls.1.html).
+Return information about a Podman volume as returned by [podman volume ls](https://docs.podman.io/en/latest/markdown/podman-volume-ls.1.html):
 
 ```ruby
 describe podman.volumes do
@@ -170,7 +170,7 @@ describe podman.info do
 end
 ```
 
-Return the parsed result of [podman version](https://docs.podman.io/en/latest/markdown/podman-version.1.html)
+Return the parsed result of [podman version](https://docs.podman.io/en/latest/markdown/podman-version.1.html):
 
 ```ruby
 describe podman.version do
@@ -179,7 +179,7 @@ describe podman.version do
 end
 ```
 
-Return low-level information about Podman objects as returned by [podman inspect](https://docs.podman.io/en/latest/markdown/podman-inspect.1.html).
+Return low-level information about Podman objects as returned by [podman inspect](https://docs.podman.io/en/latest/markdown/podman-inspect.1.html):
 
 ```ruby
 describe podman.object(id) do

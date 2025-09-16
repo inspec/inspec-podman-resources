@@ -195,7 +195,7 @@ describe podman_pod("nginx-frontend") do
 end
 ```
 
-Test if a pod does not exist on Podman:
+Test if a pod doesn't exist on Podman:
 
 ```ruby
 describe podman_pod("non_existing_pod") do

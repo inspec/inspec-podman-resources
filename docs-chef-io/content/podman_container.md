@@ -130,7 +130,7 @@ describe podman_container('sweet_mendeleev') do
 end
 ```
 
-Ensures the container `sweet_mendeleev` exists as part of the Podman instances and the status is running:
+Ensure the container `sweet_mendeleev` exists as part of the Podman instances and the status is running:
 
 ```ruby
 describe podman_container('sweet_mendeleev') do
