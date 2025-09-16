@@ -1,23 +1,15 @@
 +++
 title = "podman_network resource"
 draft = false
-gh_repo = "inspec"
-platform = "unix"
 
-[menu]
-  [menu.inspec]
+
+[menu.podman]
     title = "podman_network"
     identifier = "inspec/resources/os/podman_network.md podman_network resource"
     parent = "inspec/resources/os"
 +++
 
 Use the `podman_network` Chef InSpec audit resource to test the properties of existing Podman networks.
-
-## Availability
-
-### Install
-
-This resource is distributed with Chef InSpec and is automatically available for use.
 
 ## Syntax
 
@@ -156,7 +148,7 @@ its("options") { should eq nil }
 
 ## Matchers
 
-{{< readfile file="content/inspec/reusable/md/inspec_matchers_link.md" >}}
+{{< readfile file="content/reusable/md/inspec_matchers_link.md" >}}
 
 This resource has the following special matchers.
 
@@ -170,7 +162,7 @@ it { should exist }
 
 ## Examples
 
-### Tests if a given Podman network exists and verifies the various network properties
+Test if a given Podman network exists and verifies the various network properties:
 
 ```ruby
 describe podman_network("minikube") do

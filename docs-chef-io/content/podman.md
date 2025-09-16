@@ -1,23 +1,15 @@
 +++
 title = "podman resource"
 draft = false
-gh_repo = "inspec"
-platform = "unix"
 
-[menu]
-  [menu.inspec]
+
+[menu.podman]
     title = "podman"
     identifier = "inspec/resources/os/podman.md podman resource"
     parent = "inspec/resources/os"
 +++
 
 Use the `podman` Chef InSpec audit resource to test the configuration of Podman resources.
-
-## Availability
-
-### Install
-
-This resource is distributed with Chef InSpec and is automatically available for use.
 
 ## Syntax
 
@@ -110,7 +102,7 @@ where:
 
 The following examples show how to use this Chef InSpec audit resource.
 
-### Returns all running containers
+Return all running containers:
 
 ```ruby
 podman.containers.running?.ids.each do |id|
@@ -120,11 +112,7 @@ podman.containers.running?.ids.each do |id|
 end
 ```
 
-## Resource Parameter Examples
-
-### containers
-
-`containers` returns information about containers as returned by [podman ps -a](https://docs.podman.io/en/latest/markdown/podman.1.html).
+Return information about containers as returned by [podman ps -a](https://docs.podman.io/en/latest/markdown/podman.1.html):
 
 ```ruby
 describe podman.containers do
@@ -135,9 +123,7 @@ describe podman.containers do
 end
 ```
 
-### images
-
-`images` returns information about a Podman image as returned by [podman images -a](https://docs.podman.io/en/latest/markdown/podman-images.1.html).
+Return information about a Podman image as returned by [podman images -a](https://docs.podman.io/en/latest/markdown/podman-images.1.html):
 
 ```ruby
 describe podman.images do
@@ -147,9 +133,7 @@ describe podman.images do
 end
 ```
 
-### pods
-
-`pods` returns information about pods as returned by [podman pod ps](https://docs.podman.io/en/latest/markdown/podman-pod-ps.1.html).
+Return information about pods as returned by [podman pod ps](https://docs.podman.io/en/latest/markdown/podman-pod-ps.1.html).
 
 ```ruby
 describe podman.pods do
@@ -159,9 +143,7 @@ describe podman.pods do
 end
 ```
 
-### networks
-
-`networks` returns information about a Podman network as returned by [podman network ls](https://docs.podman.io/en/latest/markdown/podman-network-ls.1.html).
+Return information about a Podman network as returned by [podman network ls](https://docs.podman.io/en/latest/markdown/podman-network-ls.1.html):
 
 ```ruby
 describe podman.networks do
@@ -171,9 +153,7 @@ describe podman.networks do
 end
 ```
 
-### volumes
-
-`volumes` returns information about a Podman volume as returned by [podman volume ls](https://docs.podman.io/en/latest/markdown/podman-volume-ls.1.html).
+Return information about a Podman volume as returned by [podman volume ls](https://docs.podman.io/en/latest/markdown/podman-volume-ls.1.html):
 
 ```ruby
 describe podman.volumes do
@@ -182,9 +162,7 @@ describe podman.volumes do
 end
 ```
 
-### info
-
-`info` returns the parsed result of [podman info](https://docs.podman.io/en/latest/markdown/podman-info.1.html).
+Return the parsed result of [podman info](https://docs.podman.io/en/latest/markdown/podman-info.1.html).
 
 ```ruby
 describe podman.info do
@@ -192,9 +170,7 @@ describe podman.info do
 end
 ```
 
-### version
-
-`version` returns the parsed result of [podman version](https://docs.podman.io/en/latest/markdown/podman-version.1.html)
+Return the parsed result of [podman version](https://docs.podman.io/en/latest/markdown/podman-version.1.html):
 
 ```ruby
 describe podman.version do
@@ -203,9 +179,7 @@ describe podman.version do
 end
 ```
 
-### object('id')
-
-`object` returns low-level information about Podman objects as returned by [podman inspect](https://docs.podman.io/en/latest/markdown/podman-inspect.1.html).
+Return low-level information about Podman objects as returned by [podman inspect](https://docs.podman.io/en/latest/markdown/podman-inspect.1.html):
 
 ```ruby
 describe podman.object(id) do
@@ -215,4 +189,4 @@ end
 
 ## Matchers
 
-{{< readfile file="content/inspec/reusable/md/inspec_matchers_link.md" >}}
+{{< readfile file="content/reusable/md/inspec_matchers_link.md" >}}

@@ -1,23 +1,15 @@
 +++
 title = "podman_container resource"
 draft = false
-gh_repo = "inspec"
-platform = "unix"
 
-[menu]
-  [menu.inspec]
+
+[menu.podman]
     title = "podman_container"
     identifier = "inspec/resources/os/podman_container.md podman_container resource"
     parent = "inspec/resources/os"
 +++
 
 Use the `podman_container` Chef InSpec audit resource to test the configuration of Podman containers.
-
-## Availability
-
-### Install
-
-This resource is distributed with Chef InSpec and is automatically available for use.
 
 ## Syntax
 
@@ -106,8 +98,9 @@ its('command') { should eq 'nc -ll -p 1234 -e /bin/cat' }
 
 ## Matchers
 
-{{< readfile file="content/inspec/reusable/md/inspec_matchers_link.md" >}}
- The specific matchers of this resource are: `exist` and `be_running`.
+{{< readfile file="content/reusable/md/inspec_matchers_link.md" >}}
+
+The specific matchers of this resource are: `exist` and `be_running`.
 
 ### exist
 
@@ -129,9 +122,7 @@ it { should be_running }
 
 The following examples show how to use this Chef InSpec audit resource.
 
-### Ensures container exists
-
-The below test passes if the container `sweet_mendeleev` exists as part of the Podman instances.
+Ensure the container `sweet_mendeleev` exists as part of the Podman instances:
 
 ```ruby
 describe podman_container('sweet_mendeleev') do
@@ -139,9 +130,7 @@ describe podman_container('sweet_mendeleev') do
 end
 ```
 
-### Ensures container is in running status
-
-The below test passes if the container `sweet_mendeleev` exists as part of the Podman instances and the status is running.
+Ensure the container `sweet_mendeleev` exists as part of the Podman instances and the status is running:
 
 ```ruby
 describe podman_container('sweet_mendeleev') do

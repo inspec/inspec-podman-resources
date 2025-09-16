@@ -1,23 +1,15 @@
 +++
 title = "podman_pod resource"
 draft = false
-gh_repo = "inspec"
-platform = "unix"
 
-[menu]
-  [menu.inspec]
+
+[menu.podman]
     title = "podman_pod"
     identifier = "inspec/resources/os/podman_pod.md podman_pod resource"
     parent = "inspec/resources/os"
 +++
 
 Use the `podman_pod` Chef InSpec audit resource to test the properties of a pod on Podman.
-
-## Availability
-
-### Install
-
-This resource is distributed with Chef InSpec and is automatically available for use.
 
 ## Syntax
 
@@ -166,7 +158,7 @@ its("containers") { should_not be nil }
 
 ## Matchers
 
-{{< readfile file="content/inspec/reusable/md/inspec_matchers_link.md" >}}
+{{< readfile file="content/reusable/md/inspec_matchers_link.md" >}}
 
 This resource has the following special matchers.
 
@@ -180,7 +172,7 @@ it { should exist }
 
 ## Examples
 
-### Test if a pod exists on Podman and verifies pod properties
+Test if a pod exists on Podman and verifies pod properties:
 
 ```ruby
 describe podman_pod("nginx-frontend") do
@@ -203,7 +195,7 @@ describe podman_pod("nginx-frontend") do
 end
 ```
 
-### Test if a pod does not exist on Podman
+Test if a pod doesn't exist on Podman:
 
 ```ruby
 describe podman_pod("non_existing_pod") do
