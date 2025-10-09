@@ -1,30 +1,26 @@
 ---
-
-product_key: inspec-podman-resources
-
 slack:
   notify_channel:
     - inspec-notify
 
+rubygems:
+  - inspec-podman-resources
+
 pipelines:
- - verify:
+  - verify:
       definition: .expeditor/verify.pipeline.yml
-      description: Executes the verify pipeline for Resource packs
- - coverage:
+      description: Keeping the verify pipeline alive to preserve the history
+  - coverage:
       description: Unit test coverage
       public: false
       # Private due to use of tokens
       trigger: pull_request
       env:
-      - LANG: "C.UTF-8"
-      - SLOW: 1
-      - NO_AWS: 1
-      - MT_CPU: 5
-      - ARTIFACTORY_BASE_URL: https://artifactory-internal.ps.chef.co
-
-rubygems:
-  - inspec-podman-resources:
-      gemspec_path: .
+        - LANG: "C.UTF-8"
+        - SLOW: 1
+        - NO_AWS: 1
+        - MT_CPU: 5
+        - ARTIFACTORY_BASE_URL: https://artifactory-internal.ps.chef.co
 
 github:
   delete_branch_on_merge: true
@@ -33,21 +29,25 @@ github:
   major_bump_labels:
     - "Expeditor: Bump Major Version"
 
+release_branches:
+  - main:
+      version_constraint: 7.*
+
 subscriptions:
   - workload: pull_request_merged:{{github_repo}}:{{release_branch}}:*
     actions:
-    - built_in:bump_version:
-        ignore_labels:
-          - "Expeditor: Skip Version Bump"
-          - "Expeditor: Skip All"
-    - bash:.expeditor/update_version.sh:
-        only_if: built_in:bump_version
-    - built_in:update_changelog:
-        ignore_labels:
-          - "Expeditor: Skip All"
-          - "Expeditor: Skip Changelog"
-    - built_in:build_gem:
-        only_if: built_in:bump_version
+      - built_in:bump_version:
+          ignore_labels:
+            - "Expeditor: Skip Version Bump"
+            - "Expeditor: Skip All"
+      - bash:.expeditor/update_version.sh:
+          only_if: built_in:bump_version
+      - built_in:update_changelog:
+          ignore_labels:
+            - "Expeditor: Skip All"
+            - "Expeditor: Skip Changelog"
+      - built_in:build_gem:
+          only_if: built_in:bump_version
   - workload: project_promoted:{{agent_id}}:*
     actions:
       - built_in:rollover_changelog
