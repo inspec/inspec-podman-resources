@@ -1,7 +1,7 @@
 name: inspec-podman-resources
 title: Resource pack gem for PodmanResources
 maintainer: InSpec Core Maintainers
-copyright: Progress Software Corporation
+copyright: Copyright (c) 2024-2025 Progress Software Corporation and/or its subsidiaries or affiliates. All Rights Reserved.
 copyright_email: inspec@progress.com
 license: ApacheV2
 summary: podman InSpec Resources in a Gem
