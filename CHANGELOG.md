@@ -1,23 +1,20 @@
 # Changelog
-<!-- latest_release 7.1.5 -->
+<!-- latest_release -->
+<!-- latest_release -->
+<!-- release_rollup -->
+<!-- release_rollup -->
+<!-- latest_stable_release -->
 ## [7.1.5](https://github.com/inspec/inspec-podman-resources/tree/7.1.5) (2026-04-27)
 
 #### Merged Pull Requests
 - Fix config formatting for private rubygem server [#27](https://github.com/inspec/inspec-podman-resources/pull/27) ([Nik08](https://github.com/Nik08))
-<!-- latest_release -->
-<!-- release_rollup since=7.1.2 -->
-### Changes since 7.1.2 release
-
-#### Merged Pull Requests
-- Fix config formatting for private rubygem server [#27](https://github.com/inspec/inspec-podman-resources/pull/27) ([Nik08](https://github.com/Nik08)) <!-- 7.1.5 -->
-<!-- release_rollup -->
 <!-- latest_stable_release -->
+
 ## [7.1.4](https://github.com/inspec/inspec-podman-resources/tree/7.1.4) (2026-04-27)
 
 #### Merged Pull Requests
 - Remove minitest/unit require incompatible with Minitest 6 [#25](https://github.com/inspec/inspec-podman-resources/pull/25) ([Nik08](https://github.com/Nik08))
 - Added config for private rubygem server [#26](https://github.com/inspec/inspec-podman-resources/pull/26) ([Nik08](https://github.com/Nik08))
-<!-- latest_stable_release -->
 
 ## [7.1.2](https://github.com/inspec/inspec-podman-resources/tree/7.1.2) (2025-10-16)
 
