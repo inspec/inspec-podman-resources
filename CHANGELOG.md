@@ -1,7 +1,15 @@
 # Changelog
+<!-- latest_release 7.1.5 -->
+## [7.1.5](https://github.com/inspec/inspec-podman-resources/tree/7.1.5) (2026-04-27)
+
+#### Merged Pull Requests
+- Fix config formatting for private rubygem server [#27](https://github.com/inspec/inspec-podman-resources/pull/27) ([Nik08](https://github.com/Nik08))
 <!-- latest_release -->
-<!-- latest_release -->
-<!-- release_rollup -->
+<!-- release_rollup since=7.1.2 -->
+### Changes since 7.1.2 release
+
+#### Merged Pull Requests
+- Fix config formatting for private rubygem server [#27](https://github.com/inspec/inspec-podman-resources/pull/27) ([Nik08](https://github.com/Nik08)) <!-- 7.1.5 -->
 <!-- release_rollup -->
 <!-- latest_stable_release -->
 ## [7.1.4](https://github.com/inspec/inspec-podman-resources/tree/7.1.4) (2026-04-27)
