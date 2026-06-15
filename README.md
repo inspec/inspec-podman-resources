@@ -14,4 +14,5 @@ depends:
     gem: inspec-podman-resources
 ```
 
-
+# Copyright
+See [COPYRIGHT.md](./COPYRIGHT.md).
